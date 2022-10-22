@@ -5,30 +5,41 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  //return a header with a little logo stored in public/images, a nav bar, and a main section. Main section has a loggin form with user name and password fields, a submit button, and a link to the registration page.
+
+  const navItems = [
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Contact', link: '/contact' },
+    { name: 'Login', link: '/login' },
+  ]
+
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <header>
+        <img src='/images/Logo FE3.png' alt='logo' />
+        <nav>
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a href={item.link}>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <form>
+          <label htmlFor='username'>Username</label>
+          <input type='text' id='username' />
+          <label htmlFor='password'>Password</label>
+          <input type='password' id='password' />
+          <button type='submit'>Login</button>
+        </form>
+      </main>
     </div>
-  )
+    )
+  
 }
 
 export default App
