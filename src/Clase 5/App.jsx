@@ -1,7 +1,7 @@
 import './App.css'
 import { productos } from './components/productos.js'
 
-console.log(productos);
+// console.log(productos);
 
 function App() {
   return (
