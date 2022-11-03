@@ -8,7 +8,8 @@ export default function CardList() {
   
   return (
     <>
-    { misProductos.length !== 0 && misProductos.map(producto => <Card key={producto.id} producto = {producto} setMisProductos = {setMisProductos} />) }
+    { misProductos.length !== 0 && 
+    misProductos.map(producto => <Card key={producto.id} producto = {producto} setMisProductos = {setMisProductos} />) }
     <button 
       disabled={misProductos.length === productos.length} 
       onClick={() => setMisProductos([...misProductos, productos[ misProductos.length]])}>
